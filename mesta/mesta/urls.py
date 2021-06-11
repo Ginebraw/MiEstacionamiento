@@ -20,8 +20,9 @@ from django.conf.urls.static import static #para las fotos
 from django.conf import settings #para las fotos
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('arriendo/',include('arriendo.urls')),
+    path('admin', admin.site.urls),
+    path('arriendo',include('arriendo.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),
 ]
 
 urlpatterns+= static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
