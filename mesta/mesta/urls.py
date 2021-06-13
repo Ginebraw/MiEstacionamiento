@@ -21,7 +21,7 @@ from django.conf import settings #para las fotos
 
 urlpatterns = [
     path('admin', admin.site.urls),
-    path('arriendo',include('arriendo.urls')),
+    path('arriendo/',include('arriendo.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
 ]
 

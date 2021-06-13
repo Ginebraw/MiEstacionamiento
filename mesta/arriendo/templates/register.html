@@ -1,0 +1,43 @@
+{% extends 'inner-page.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+      <ol>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li>Registro</li>
+      </ol>
+      <h2>Registro de usuario</h2>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <section class="inner-page">
+    <div class="container">
+      <p>
+        Elija el tipo de usuario
+      </p>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+<body>
+  <div class="d-flex justify-content-center">
+    <div class="col-m-6 p-5">
+      <a class="btn btn-success float left" href="{% url 'nuevo_arrendatario' %}"
+        style="float: left; font-size: 14px;">Agregar Usuario</a>
+    </div>
+    <div class="col-m-6 p-5">
+      <a class="btn btn-success float right" href="{% url 'nuevo_arrendador' %}"
+        style="float: right; font-size: 14px;">Agregar arrendador</a>
+    </div>
+  </div><br><br><br><br>
+</body>
+{% endblock %}
