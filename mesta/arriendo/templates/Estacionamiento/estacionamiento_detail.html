@@ -1,0 +1,21 @@
+{% extends 'inner-page.html' %}
+
+{% block content %}
+
+{% load static %}
+<head>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<div class="d-flex justify-content-center">
+    <form class="form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table">
+            {{ form.as_table }}
+        </table>
+        <button type="submit" id="submit">Registrarse</button>
+    </form>
+    <br><br><br>
+</div>
+
+{% endblock %}

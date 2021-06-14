@@ -6,7 +6,20 @@
 
 
 
-<p>ESTO ES UNA PRUEBA</p>
+<div id="act2" class="row justify-content-around" style="margin-bottom:60px;">
+	{% for est in num_est %}
+            <div class="col-xl-3 col-lg-7 col-md-7 col-sm-7 col-7" style="margin-left: 10px;">
+                <div class="card" style="margin-top: 20px; margin-bottom: 20px; height:640px; width: auto;">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ est.n_esta }}</h4>
+						<p class="card-text">$ {{ est.tamaño }}</p>
+						<p class="card-text">{{ est.direccion }}</p>
+						
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+</div>
 
 
 

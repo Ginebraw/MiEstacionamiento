@@ -1,0 +1,22 @@
+{% extends 'inner-page.html' %}
+
+{% block content %}
+
+{% load static %}
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<head>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<div class="d-flex justify-content-center">
+    <form class="form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table">
+            {{ form.as_table }}
+        </table>
+        <button type="submit" id="submit">Ingresar estacionamiento</button>
+    </form>
+    <br><br><br>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

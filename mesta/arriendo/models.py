@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Arrendatario(models.Model):
@@ -22,3 +23,21 @@ class Arrendador(models.Model):
 
     def _str(self):
         return self.rut
+
+
+class Estacionamiento(models.Model):
+    n_esta =models.CharField(primary_key=True, max_length=8)
+    Pequeño="Pequeño"
+    Mediano="Mediano"
+    Grande="Grande"
+    tamaño_choices=((Pequeño,"Pequeño"),(Mediano,"Mediano"),(Grande,"Grande"))
+    tamaño = models.CharField(null=False, max_length=8, default="Mediano", choices=tamaño_choices)
+    direccion = models.CharField(null=False, max_length=50)
+
+    def __str__(self):
+        return self.n_esta
+
+    def get_absolute_url(self):
+        return reverse('estacionamiento_detail', args=[str(self.n_esta)])    
+
+
